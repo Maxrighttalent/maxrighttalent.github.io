@@ -19,44 +19,39 @@
       margin: 0 auto;
       padding: 0 2rem;
     }
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">
-        <img src="logo.png" alt="USDtz Logo" style="height: 60px;">
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="whitepaper.html">Whitepaper</a>
-        <a href="https://t.me/usdtzofficial">Telegram</a>
-        <a href="https://snapshot.org/#/usdtz.eth">Governance</a>
-      </div>
-    </nav>
-  </div>
-</header>
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #10B981;
     }
-    .logo-icon {
-      background: #10B981;
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
+    .logo img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+    .nav-links {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      gap: 2rem;
     }
     .nav-links a {
-      margin-left: 2rem;
       text-decoration: none;
       color: #4b5563;
       font-weight: 500;
+      font-size: 1.1rem;
     }
     .nav-links a:hover {
       color: #10B981;
@@ -86,9 +81,11 @@
       text-decoration: none;
       font-weight: 600;
       margin: 0.5rem;
+      transition: 0.3s;
     }
     .btn:hover {
       background: #059669;
+      transform: translateY(-2px);
     }
     .btn-outline {
       background: transparent;
@@ -98,15 +95,33 @@
     .btn-outline:hover {
       background: rgba(16, 185, 129, 0.1);
     }
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #047857;
+    }
     footer {
       text-align: center;
-      padding: 3rem 0;
-      background: #1f2937;
-      color: #e5e7eb;
+      padding: 4rem 0;
+      background: #0f172a;
+      color: #e2e8f0;
     }
     footer a {
-      color: #93c5fd;
+      color: #86efac;
       text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1.1rem; }
+      .nav-links { flex-direction: column; gap: 1rem; }
+      .container { padding: 0 1rem; }
     }
   </style>
 </head>
@@ -116,14 +131,14 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <div class="logo-icon">Z</div>
-          <span>USDT.z</span>
+          <img src="logo.jpg" alt="USDtz Logo" />
         </div>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="whitepaper.html">Whitepaper</a>
           <a href="https://t.me/usdtzofficial">Telegram</a>
           <a href="https://snapshot.org/#/usdtz.eth">Governance</a>
+          <a href="https://etherscan.io/address/0x8743d5A6b3F8a7c2C1e9f0d8E2F1aB5cD4e7a7c2">Etherscan</a>
         </div>
       </nav>
     </div>
@@ -138,17 +153,71 @@
     </div>
   </section>
 
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About USDtz</h2>
+      <p style="max-width: 800px; margin: 0 auto; text-align: center;">
+        USDtz (USDT.z) is a next-generation stablecoin designed to maintain a 1:1 peg to the US Dollar through a transparent reserve and decentralized governance.
+        Built on Ethereum with UUPS upgradeability, USDtz ensures long-term stability, security, and community control.
+      </p>
+    </div>
+  </section>
+
+  <section id="token">
+    <div class="container">
+      <h2 class="section-title">Token Mechanics</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p><strong>Minting:</strong> Only authorized minters (multisig) can mint USDtz.</p>
+        <p><strong>Burning:</strong> Permissionless — users can burn anytime.</p>
+        <p><strong>Governance:</strong> 1 USDT.z = 1 vote via Snapshot.</p>
+        <p><strong>Fee Distribution:</strong> 70% to reserve, 20% to stakers, 10% to treasury.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve">
+    <div class="container">
+      <h2 class="section-title">Reserve Architecture</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p><strong>Phase 1:</strong> 1:1 USDC</p>
+        <p><strong>Phase 2:</strong> 1.5:1 (USDC + stETH)</p>
+        <p><strong>Phase 3:</strong> 2:1 Dynamic (USDC, stETH, tokenized bonds)</p>
+        <p>Reserve balances are verified weekly. Full audit by ChainSecurity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title">The Team</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 900px; margin: 0 auto;">
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; width: 300px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
+          <h3>Nor Wolf</h3>
+          <p><strong>CEO</strong></p>
+          <p>MIT CS '08 | Ex-PayPal Engineer | 12+ years in fintech</p>
+          <a href="https://linkedin.com/in/norwolf" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; width: 300px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
+          <h3>Jane Doe</h3>
+          <p><strong>CTO</strong></p>
+          <p>Stanford PhD '15 | Blockchain Security | Ex-Chainalysis</p>
+          <a href="https://linkedin.com/in/janedoe" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <p>&copy; 2025 USDtz. All rights reserved.</p>
       <p>
         <a href="whitepaper.html">Whitepaper</a> | 
         <a href="https://t.me/usdtzofficial">Telegram</a> | 
-        <a href="https://twitter.com/usdtz_eth">X (Twitter)</a>
+        <a href="https://twitter.com/usdtz_eth">X (Twitter)</a> | 
+        <a href="https://github.com/Maxrighttalent">GitHub</a>
       </p>
     </div>
   </footer>
 
 </body>
 </html>
-
