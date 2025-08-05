@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>USDtz (USDT.z) – Decentralized Stablecoin on Ethereum</title>
+  <meta name="description" content="USDtz (USDT.z) is a multi-collateral, upgradeable stablecoin on Ethereum. Governed by its community. Audited. Open-source." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    header {
+      padding: 2rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #10B981;
+    }
+    .nav-links a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #10B981;
+    }
+    .hero {
+      padding: 6rem 0;
+      text-align: center;
+      background: linear-gradient(to bottom, #ecfdf5, #d1fae5);
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #047857;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #4b5563;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #10B981;
+      color: white;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #10B981;
+      color: #10B981;
+    }
+    .btn-outline:hover {
+      background: rgba(16, 185, 129, 0.1);
+    }
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: #047857;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      width: 350px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #d1fae5;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      color: #10B981;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 4rem 0;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    footer a {
+      color: #86efac;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .diagram {
+      text-align: center;
+      margin: 3rem auto;
+      max-width: 800px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 2;
+      background: #0f172a;
+      color: #86efac;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">USDT.z</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#token">Token</a>
+          <a href="#reserve">Reserve</a>
+          <a href="#team">Team</a>
+          <a href="#governance">Governance</a>
+          <a href="#contract">Contract</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>USDtz (USDT.z)</h1>
+      <p>A decentralized, multi-collateral stablecoin on Ethereum. Transparent, upgradeable, and community-governed.</p>
+      <a href="#whitepaper" class="btn">Read Whitepaper</a>
+      <a href="#governance" class="btn btn-outline">Vote on Snapshot</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About USDtz</h2>
+      <p style="max-width: 800px; margin: 0 auto 2rem; text-align: center;">
+        USDtz (USDT.z) is a next-generation stablecoin designed to maintain a 1:1 peg to the US Dollar through a transparent reserve and decentralized governance.
+        Built on Ethereum with UUPS upgradeability, USDtz ensures long-term stability, security, and community control.
+      </p>
+
+      <div class="diagram">
+A[User Deposits USDC] --> B(Treasury Multisig)
+B --> C{Reserve Wallet}
+C --> D[Mint USDtz]
+D --> E[User Receives USDT.z]
+      </div>
+    </div>
+  </section>
+
+  <section id="token">
+    <div class="container">
+      <h2 class="section-title">Token Mechanics</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Minting & Burning</h3>
+          <p>Only authorized minters (multisig) can mint USDtz. Burning is permissionless. Daily mint limit: 1% of supply.</p>
+        </div>
+        <div class="card">
+          <h3>Governance</h3>
+          <p>1 USDT.z = 1 vote. Govern reserve assets, fees, and upgrades via Snapshot.</p>
+        </div>
+        <div class="card">
+          <h3>Fee Distribution</h3>
+          <p>70% → Reserve Fund<br>20% → Stakers<br>10% → Treasury</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve">
+    <div class="container">
+      <h2 class="section-title">Reserve Architecture</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Phased Collateral</h3>
+          <p><strong>Phase 1:</strong> 1:1 USDC<br><strong>Phase 2:</strong> 1.5:1 (USDC + stETH)<br><strong>Phase 3:</strong> 2:1 Dynamic</p>
+        </div>
+        <div class="card">
+          <h3>Benefits</h3>
+          <p>✅ Stability<br>✅ Trustless Redemption<br>✅ Scalability</p>
+        </div>
+        <div class="card">
+          <h3>Transparency</h3>
+          <p>Reserve balances verified weekly. Full audit by ChainSecurity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title">The Team</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Nor Wolf</h3>
+          <p><strong>CEO</strong></p>
+          <p>MIT CS '08 | Ex-PayPal Engineer | 12+ years in fintech</p>
+          <a href="https://linkedin.com/in/norwolf" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+        <div class="card">
+          <h3>Jane Doe</h3>
+          <p><strong>CTO</strong></p>
+          <p>Stanford PhD '15 | Blockchain Security | Ex-Chainalysis</p>
+          <a href="https://linkedin.com/in/janedoe" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="governance">
+    <div class="container">
+      <h2 class="section-title">Governance</h2>
+      <div class="card" style="margin: 0 auto; max-width: 600px;">
+        <h3>Vote on the Future of USDtz</h3>
+        <p>USDtz holders govern key decisions including:</p>
+        <ul style="text-align: left; margin: 1rem 0;">
+          <li>Reserve asset composition</li>
+          <li>Fee structure changes</li>
+          <li>Contract upgrades</li>
+          <li>Treasury allocations</li>
+        </ul>
+        <a href="https://snapshot.org/#/usdtz.eth" target="_blank" class="btn">Go to Snapshot</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contract">
+    <div class="container">
+      <h2 class="section-title">Smart Contract</h2>
+      <div class="card" style="margin: 0 auto; max-width: 600px;">
+        <h3>UUPS Upgradeable (Ethereum)</h3>
+        <p><strong>Contract Address:</strong><br><code>0x8743d5A6b3F8a7c2C1e9f0d8E2F1aB5cD4e7a7c2</code></p>
+        <p><a href="https://etherscan.io/address/0x8743d5A6b3F8a7c2C1e9f0d8E2F1aB5cD4e7a7c2" target="_blank">View on Etherscan</a></p>
+        <p><a href="https://usdtz.io/audit" target="_blank">Audit Report by ChainSecurity</a></p>
+        <p><a href="https://github.com/Maxrighttalent" target="_blank">Source Code on GitHub</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 USDtz. All rights reserved.</p>
+      <p>
+        <a href="#whitepaper">Whitepaper</a> | 
+        <a href="https://t.me/usdtzofficial" target="_blank">Telegram</a> | 
+        <a href="https://twitter.com/usdtz_eth" target="_blank">X (Twitter)</a> | 
+        <a href="https://github.com/Maxrighttalent" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
